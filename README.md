@@ -1,3 +1,4 @@
 # Dotfiles
 
-- Applicable ArchLinux
+- Applicable ArchLinux.
+
