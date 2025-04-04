@@ -1,0 +1,367 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# If $ZSH_CACHE_DIR is already defined
+ZSH_COMPDUMP="$ZSH_CACHE_DIR/.zcompdump"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="%Y/%m/%d %H:%M:%S"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(cp fzf git sudo zoxide zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN:en_US
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
+
+# Compilation flags
+export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+
+## configuration short startup
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+alias ou='omz update'
+alias setproxy='export http_proxy="http://192.168.176.1:10810" && export https_proxy="http://192.168.176.1:10810"'
+alias unsetproxy='unset http_proxy https_proxy'
+
+## shell command
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+## replace GNU command
+### eza replace ls
+alias ls='eza'
+alias l='eza -lagh --icons'
+alias la='eza -a --icons'
+alias ll='eza -lgh --icons'
+alias tree='eza -T --icons'
+
+### ugrep replace grep
+alias uq='ug -Q'
+alias uz='ug -z'
+alias ux='ug -U --hexdump'
+
+alias ugit='ug -R --ignore-files'
+
+alias grep='ugrep -G'
+alias egrep='ugrep -E'
+alias fgrep='ugrep -F'
+alias zgrep='ugrep -zG'
+alias zegrep='ugrep -zE'
+alias zfgrep='ugrep -zF'
+
+alias xdump='ugrep -X ""'
+alias zmore='ugrep+ -z -I -+ --pager ""'
+
+## program parameter startup
+alias pt='procs -t'
+alias ign='ig --editor neovim'
+alias n='nvim'
+alias nc='nvim --clean'
+
+## program short startup
+alias lg='lazygit'
+alias cs='codespell'
+alias ac='aria2c'
+alias ht='htop'
+alias hy='hexyl'
+alias hf='hyperfine'
+alias re='ranger'
+alias hx='helix'
+alias acr='autocorrect'
+alias wh='whereis'
+
+#auto loaded colors function
+autoload -U colors && colors
+# autoload colors
+# colors
+
+for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+eval $color='%{$fg[${(L)color}]%}'
+(( count = $count + 1 ))
+done
+FINISH="%{$terminfo[sgr0]%}"
+
+#命令提示符
+#RPROMPT=$(echo "$RED%D %T$FINISH")
+#PROMPT=$(echo "$CYAN%n@$YELLOW%M:$GREEN%/$_YELLOW>$FINISH ")
+
+#PROMPT=$(echo "$BLUE%M$GREEN%/
+#$CYAN%n@$BLUE%M:$GREEN%/$_YELLOW>>>$FINISH ")
+
+#标题栏、任务栏样式
+case $TERM in (*xterm*|*rxvt*|(dt|k|E)term)
+precmd () { print -Pn "\e]0;%n@%M//%/\a" }
+preexec () { print -Pn "\e]0;%n@%M//%/\ $1\a" }
+;;
+esac
+
+#关于历史纪录的配置
+#历史纪录条目数量
+export HISTSIZE=100000
+#注销后保存的历史纪录条目数量
+export SAVEHIST=100000
+#历史纪录文件
+export HISTFILE=~/.zsh_history
+#以附加的方式写入历史纪录
+setopt INC_APPEND_HISTORY
+#如果连续输入的命令相同，历史纪录中只保留一个
+setopt HIST_IGNORE_DUPS
+#为历史纪录中的命令添加时间戳
+setopt EXTENDED_HISTORY
+
+#启用 cd 命令的历史纪录，cd -[TAB]进入历史路径
+setopt AUTO_PUSHD
+#相同的历史路径只保留一个
+setopt PUSHD_IGNORE_DUPS
+
+#在命令前添加空格，不将此命令添加到纪录文件中
+setopt HIST_IGNORE_SPACE
+
+# 补全
+#彩色补全菜单
+eval $(dircolors -b)
+export ZLSCOLORS="${LS_COLORS}"
+zmodload zsh/complist
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+
+#修正大小写
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+#错误校正
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+#kill 命令补全
+compdef pkill=kill
+compdef pkill=killall
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:processes' command 'ps -au$USER'
+
+#补全类型提示分组
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:descriptions' format $'\e[01;33m -- %d --\e[0m'
+zstyle ':completion:*:messages' format $'\e[01;35m -- %d --\e[0m'
+zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found --\e[0m'
+zstyle ':completion:*:corrections' format $'\e[01;32m -- %d (errors: %e) --\e[0m'
+
+# cd ~ 补全顺序
+zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
+
+##行编辑高亮模式
+# Ctrl+@ 设置标记，标记和光标点之间为 region
+zle_highlight=(region:bg=magenta #选中区域
+special:bold      #特殊字符
+isearch:underline)#搜索时使用的关键字
+
+##空行 (光标在行首) 补全 "cd "
+user-complete(){
+case $BUFFER in
+"" )                       # 空行填入 "cd "
+BUFFER="cd "
+zle end-of-line
+zle expand-or-complete
+;;
+"cd --" )                  # "cd --" 替换为 "cd +"
+BUFFER="cd +"
+zle end-of-line
+zle expand-or-complete
+;;
+"cd +-" )                  # "cd +-" 替换为 "cd -"
+BUFFER="cd -"
+zle end-of-line
+zle expand-or-complete
+;;
+* )
+zle expand-or-complete
+;;
+esac
+}
+zle -N user-complete
+bindkey "\t" user-complete
+
+#漂亮又实用的命令高亮界面
+setopt extended_glob
+TOKENS_FOLLOWED_BY_COMMANDS=('|' '||' ';' '&' '&&' 'sudo' 'do' 'time' 'strace')
+
+recolor-cmd() {
+region_highlight=()
+colorize=true
+start_pos=0
+for arg in ${(z)BUFFER}; do
+((start_pos+=${#BUFFER[$start_pos+1,-1]}-${#${BUFFER[$start_pos+1,-1]## #}}))
+((end_pos=$start_pos+${#arg}))
+if $colorize; then
+colorize=false
+res=$(LC_ALL=C builtin type $arg 2>/dev/null)
+case $res in
+*'reserved word'*)   style="fg=magenta,bold";;
+*'alias for'*)       style="fg=cyan,bold";;
+*'shell builtin'*)   style="fg=yellow,bold";;
+*'shell function'*)  style='fg=green,bold';;
+*"$arg is"*)
+[[ $arg = 'sudo' ]] && style="fg=red,bold" || style="fg=blue,bold";;
+*)                   style='none,bold';;
+esac
+region_highlight+=("$start_pos $end_pos $style")
+fi
+[[ ${${TOKENS_FOLLOWED_BY_COMMANDS[(r)${arg//|/\|}]}:+yes} = 'yes' ]] && colorize=true
+start_pos=$end_pos
+done
+}
+check-cmd-self-insert() { zle .self-insert && recolor-cmd }
+check-cmd-backward-delete-char() { zle .backward-delete-char && recolor-cmd }
+
+zle -N self-insert check-cmd-self-insert
+zle -N backward-delete-char check-cmd-backward-delete-char
+
+# home 和 end 键无法正常使用的问题
+# Home
+bindkey '\e[1~' beginning-of-line
+# End
+bindkey '\e[4~' end-of-line
+
+# Keypad
+# 0 . Enter
+bindkey -s "^[Op" "0"
+bindkey -s "^[Ol" "."
+bindkey -s "^[OM" "^M"
+# 1 2 3
+bindkey -s "^[Oq" "1"
+bindkey -s "^[Or" "2"
+bindkey -s "^[Os" "3"
+# 4 5 6
+bindkey -s "^[Ot" "4"
+bindkey -s "^[Ou" "5"
+bindkey -s "^[Ov" "6"
+# 7 8 9
+bindkey -s "^[Ow" "7"
+bindkey -s "^[Ox" "8"
+bindkey -s "^[Oy" "9"
+# + -  * /
+bindkey -s "^[Ok" "+"
+bindkey -s "^[Om" "-"
+bindkey -s "^[Oj" "*"
+bindkey -s "^[Oo" "/"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# pnpm
+if [[ $EUID -ne 0 ]]; then
+    # pnpm path
+    export PNPM_HOME="/home/alour/.local/share/pnpm"
+    case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+
+    # use local path
+    export PATH=$HOME/.local/bin:$PATH
+
+fi
+# pnpm end
+
+ export VCPKG_ROOT=$HOME/.local/share/vcpkg
+ export PATH=$VCPKG_ROOT:$PATH
+
