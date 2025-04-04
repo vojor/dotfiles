@@ -1,0 +1,23 @@
+[user]
+	email = sojenir@gmail.com
+    name = Smith Alike
+[credential]
+    helper = store
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+; [http]
+;     proxy = http://192.168.176.1:10811
+; [https]
+;     proxy = http://192.168.176.1:10811
+

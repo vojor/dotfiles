@@ -1,0 +1,10 @@
+---
+Diagnostics:
+  ClangTidy:
+    Add: ["*"]
+    Remove: [abseil-*, altera-*, android-*, boost-*, clang-analyzer-osx*,
+      darwin-*, fuchsia-*, linuxkernel-*, llvmlibc-*, modernize-use-trailing-return-type,
+      objc-*, openmp-*, readability-braces-around-statements,
+      zircon-temporary-objects]
+Index:
+  Background: Build
