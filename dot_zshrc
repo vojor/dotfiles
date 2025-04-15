@@ -160,7 +160,6 @@ alias ac='aria2c'
 alias ht='htop'
 alias hy='hexyl'
 alias hf='hyperfine'
-alias re='ranger'
 alias hx='helix'
 alias acr='autocorrect'
 alias wh='whereis'
@@ -347,7 +346,6 @@ bindkey -s "^[Oo" "/"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
 if [[ $EUID -ne 0 ]]; then
     # pnpm path
     export PNPM_HOME="/home/alour/.local/share/pnpm"
@@ -356,12 +354,18 @@ if [[ $EUID -ne 0 ]]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
     esac
 
-    # use local path
+    function y() {
+	    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	    yazi "$@" --cwd-file="$tmp"
+	    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		    builtin cd -- "$cwd"
+	    fi
+	    rm -f -- "$tmp"
+    }
+
+    # Add location to PATH
     export PATH=$HOME/.local/bin:$PATH
-
+    #
+    export VCPKG_ROOT=$HOME/.local/share/vcpkg
+    export PATH=$VCPKG_ROOT:$PATH
 fi
-# pnpm end
-
- export VCPKG_ROOT=$HOME/.local/share/vcpkg
- export PATH=$VCPKG_ROOT:$PATH
-
