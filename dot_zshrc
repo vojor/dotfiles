@@ -365,7 +365,7 @@ if [[ $EUID -ne 0 ]]; then
 
     # Add location to PATH
     export PATH=$HOME/.local/bin:$PATH
-    #
+    # VCPKG
     export VCPKG_ROOT=$HOME/.local/share/vcpkg
     export PATH=$VCPKG_ROOT:$PATH
 fi
