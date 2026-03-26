@@ -4,26 +4,29 @@ colors:
   # basic color
   fg: "eff0f1"
   bg: "31363b"
-  # path and system
+  # path
   dir_blue: "1d99f3"
   link_cyan: "1abc9c"
+  link_hard: "1abc5f"
   path_cyan: "3daee9"
+  link_dead: "96281b"
   # logic/code
   code_mint: "1cdc9a"
   exec_lime: "11d116"
   build_emerald: "27ae60"
-  build_create: "3ff065"
+  build_create: "f1882e"
   # config/doc
-  conf_amber: "f9c333"
+  conf_amber: "f9c380"
   conf_yellow: "f1c40f"
-  data_orange: "f67400"
-  readme_gold: "fdbc4b"
+  data_orange: "ac7400"
+  readme_gold: "ffbc4b"
+  conf_rc: "aa9630"
   # archive
-  arc_pack_amber: "e67e22"
-  arc_tar_orange: "d35400"
-  arc_heavy_red: "96281b"
+  arc_pack_amber: "b67e22"
+  arc_tar_orange: "d3542f"
+  arc_heavy_red: "96283f"
   # stylefile
-  sty_web: "f35232"
+  sty_web: "b35230"
   sty_record: "f56965"
   # media
   audio_gold: "f290ab"
@@ -32,7 +35,7 @@ colors:
   font_ttf: "d199af"
   td_space: "af0255"
   # --- status ---
-  script_vermil: "ac4142"
+  script_vermil: "ac415f"
   system_crimson: "c0392b"
   tool_pink: "af7ac5"
   # gray
@@ -74,11 +77,12 @@ core:
     foreground: link_cyan
     font-style: italic
   broken_symlink:
-    foreground: bg
-    background: script_vermil
+    background: link_dead
   missing_symlink_target:
-    foreground: script_vermil
-  multi_hard_link: {}
+    foreground: link_dead
+  multi_hard_link:
+    foreground: link_hard
+    font-style: underline
   socket:
     foreground: tool_pink
     background: deep_gray
@@ -106,9 +110,10 @@ archives:
   font-style: bold
   packages:
     foreground: arc_pack_amber
+    font-style: bold
   images:
     foreground: arc_heavy_red
-    font-style: underline
+    font-style: italic
 media:
   audio:
     foreground: audio_gold
@@ -161,9 +166,10 @@ programming:
     foreground: code_mint
     shell:
       foreground: script_vermil
-      font-style: bold
   tooling:
     foreground: path_cyan
+    vcs:
+      foreground: conf_rc
     build:
       foreground: build_create
 unimportant:
