@@ -1,38 +1,45 @@
 # Breeze Theme for vivid
 ---
 colors:
-  # variable: "rrggbb" | source-names (if divergent)
-  fg: "eff0f1" # Breeze White
-  bg: "31363b" # Breeze Background
-  gray1: "4d5057" # 中灰色 (用于背景强调)
-  gray2: "7f8c8d" # Breeze Gray / Bright Black
-  gray3: "95a5a6" # 辅助灰色 (用于注释/次要文字)
-  red1: "ed1515" # Breeze Red
-  red2: "c0392b" # Breeze Bright Red
-  orange1: "f67400" # Breeze Yellow (Actually Orange)
-  orange2: "e67e22"
-  yellow1: "fdbc4b" # Breeze Bright Yellow
-  yellow2: "f1c40f"
-  yellow3: "f9c333"
-  green1: "11d116" # Breeze Green
-  green2: "1cdc9a" # Breeze Bright Green
-  green3: "16a085" # Breeze Cyan
-  green4: "8fff89"
-  blue1: "3daee9" # Breeze Bright Blue
-  blue2: "1d99f3" # Breeze Blue
-  blue3: "2980b9" # 深蓝色
-  blue4: "1abc9c" # Breeze Cyan/Teal
-  blue5: "3498db" # 浅蓝色
-  blue6: "1d99f3" # 核心蓝色
-  purple1: "9b59b6" # Breeze Purple
-  purple2: "8e44ad" # Breeze Bright Purple
-  purple3: "d186e8"
-  purple4: "af7ac5"
-  bg_red: "442a2a"
-  bg_orange: "44352a"
-  bg_yellow: "44402a"
-  bg_green1: "2a4433"
-  bg_green2: "2a3f44"
+  # basic color
+  fg: "eff0f1"
+  bg: "31363b"
+  # path and system
+  dir_blue: "1d99f3"
+  link_cyan: "1abc9c"
+  path_cyan: "3daee9"
+  # logic/code
+  code_mint: "1cdc9a"
+  exec_lime: "11d116"
+  build_emerald: "27ae60"
+  build_create: "3ff065"
+  # config/doc
+  conf_amber: "f9c333"
+  conf_yellow: "f1c40f"
+  data_orange: "f67400"
+  readme_gold: "fdbc4b"
+  # archive
+  arc_pack_amber: "e67e22"
+  arc_tar_orange: "d35400"
+  arc_heavy_red: "96281b"
+  # stylefile
+  sty_web: "f35232"
+  sty_record: "f56965"
+  # media
+  audio_gold: "f290ab"
+  img_lavender: "9b59b6"
+  vid_rose: "d186e8"
+  font_ttf: "d199af"
+  td_space: "af0255"
+  # --- status ---
+  script_vermil: "ac4142"
+  system_crimson: "c0392b"
+  tool_pink: "af7ac5"
+  # gray
+  mute_gray: "7f8c8d"
+  deep_gray: "4d5057"
+  warn_bg: "3d2b1f"
+  err_bg: "351a1a"
 core:
   normal_text:
     foreground: fg
@@ -40,107 +47,124 @@ core:
   reset_to_normal:
     foreground: fg
   directory:
-    foreground: blue2
+    foreground: dir_blue
     font-style: bold
   executable_file:
-    foreground: green1
+    foreground: exec_lime
     font-style: bold
   file_with_capability:
-    background: gray1
+    background: deep_gray
   setuid:
-    background: red2
+    background: arc_heavy_red
     foreground: fg
   setgid:
-    background: orange1
+    background: data_orange
     foreground: bg
   sticky:
-    background: gray1
+    background: deep_gray
   sticky_other_writable:
     foreground: bg
-    background: green1
+    background: exec_lime
     font-style: bold
   other_writable:
-    foreground: blue6
-    background: gray1
+    foreground: dir_blue
+    background: deep_gray
     font-style: bold
   symlink:
-    foreground: blue4
+    foreground: link_cyan
     font-style: italic
   broken_symlink:
     foreground: bg
-    background: red1
+    background: script_vermil
   missing_symlink_target:
-    foreground: red1
+    foreground: script_vermil
   multi_hard_link: {}
   socket:
-    foreground: purple2
-    background: bg_green2
+    foreground: tool_pink
+    background: deep_gray
     font-style: bold
   fifo:
-    foreground: orange2
-    background: bg_orange
+    foreground: data_orange
+    background: warn_bg
     font-style: bold
   door:
-    foreground: green3
-    background: bg_green1
+    foreground: link_cyan
+    background: bg
     font-style: bold
   block_device:
-    foreground: red1
-    background: bg_red
+    foreground: arc_heavy_red
+    background: err_bg
     font-style: bold
   character_device:
-    foreground: yellow1
-    background: bg_yellow
+    foreground: conf_amber
+    background: warn_bg
     font-style: bold
 executable:
-  foreground: green2
+  foreground: exec_lime
 archives:
-  foreground: orange1
+  foreground: arc_tar_orange
   font-style: bold
+  packages:
+    foreground: arc_pack_amber
+  images:
+    foreground: arc_heavy_red
+    font-style: underline
 media:
   audio:
-    foreground: blue1
+    foreground: audio_gold
     font-style: bold
   image:
-    foreground: purple1
+    foreground: img_lavender
     font-style: bold
   video:
-    foreground: purple2
+    foreground: vid_rose
     font-style: bold
   fonts:
-    foreground: blue4
+    foreground: font_ttf
     font-style: bold
   3d:
-    foreground: purple3
+    foreground: td_space
     font-style: bold
 office:
-  foreground: green1
+  foreground: build_emerald
   font-style: bold
 text:
   foreground: fg
   configuration:
-    foreground: yellow1
+    foreground: conf_yellow
     dockerfile:
-      foreground: orange2
+      foreground: data_orange
+    system:
+      foreground: system_crimson
+      font-style: italic
   licenses:
     foreground: fg
     font-style: bold
-  readme:
-    foreground: yellow3
-    font-style: bold
   special:
-    foreground: yellow2
+    foreground: readme_gold
     font-style: bold
   todo:
-    foreground: blue5
+    foreground: path_cyan
     font-style: bold
+  other:
+    foreground: fg
+    font-style: italic
 markup:
-  foreground: fg
+  foreground: link_cyan
+  web:
+    foreground: sty_web
+  other:
+    foreground: sty_record
 programming:
-  foreground: green4
+  foreground: code_mint
+  source:
+    foreground: code_mint
+    shell:
+      foreground: script_vermil
+      font-style: bold
   tooling:
-    foreground: blue3
-    continuous-integration:
-      foreground: blue2
+    foreground: path_cyan
+    build:
+      foreground: build_create
 unimportant:
-  foreground: gray2
+  foreground: mute_gray
