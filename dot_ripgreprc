@@ -1,0 +1,25 @@
+# 搜索行为
+--smart-case
+--hidden
+--follow
+--max-columns=150
+--max-columns-preview
+
+# 过滤逻辑
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!.cache/*
+--glob=!.npm/*
+
+# 输出美化
+--line-number
+--column
+--heading
+--colors=line:fg:yellow
+--colors=path:fg:green
+--colors=path:style:bold
+--colors=match:fg:red
+--colors=match:style:bold
+
+# 性能优化
+--mmap

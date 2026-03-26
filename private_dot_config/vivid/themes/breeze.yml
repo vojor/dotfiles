@@ -1,0 +1,146 @@
+# Breeze Theme for vivid
+---
+colors:
+  # variable: "rrggbb" | source-names (if divergent)
+  fg: "eff0f1" # Breeze White
+  bg: "31363b" # Breeze Background
+  gray1: "4d5057" # 中灰色 (用于背景强调)
+  gray2: "7f8c8d" # Breeze Gray / Bright Black
+  gray3: "95a5a6" # 辅助灰色 (用于注释/次要文字)
+  red1: "ed1515" # Breeze Red
+  red2: "c0392b" # Breeze Bright Red
+  orange1: "f67400" # Breeze Yellow (Actually Orange)
+  orange2: "e67e22"
+  yellow1: "fdbc4b" # Breeze Bright Yellow
+  yellow2: "f1c40f"
+  yellow3: "f9c333"
+  green1: "11d116" # Breeze Green
+  green2: "1cdc9a" # Breeze Bright Green
+  green3: "16a085" # Breeze Cyan
+  green4: "8fff89"
+  blue1: "3daee9" # Breeze Bright Blue
+  blue2: "1d99f3" # Breeze Blue
+  blue3: "2980b9" # 深蓝色
+  blue4: "1abc9c" # Breeze Cyan/Teal
+  blue5: "3498db" # 浅蓝色
+  blue6: "1d99f3" # 核心蓝色
+  purple1: "9b59b6" # Breeze Purple
+  purple2: "8e44ad" # Breeze Bright Purple
+  purple3: "d186e8"
+  purple4: "af7ac5"
+  bg_red: "442a2a"
+  bg_orange: "44352a"
+  bg_yellow: "44402a"
+  bg_green1: "2a4433"
+  bg_green2: "2a3f44"
+core:
+  normal_text:
+    foreground: fg
+  regular_file: {}
+  reset_to_normal:
+    foreground: fg
+  directory:
+    foreground: blue2
+    font-style: bold
+  executable_file:
+    foreground: green1
+    font-style: bold
+  file_with_capability:
+    background: gray1
+  setuid:
+    background: red2
+    foreground: fg
+  setgid:
+    background: orange1
+    foreground: bg
+  sticky:
+    background: gray1
+  sticky_other_writable:
+    foreground: bg
+    background: green1
+    font-style: bold
+  other_writable:
+    foreground: blue6
+    background: gray1
+    font-style: bold
+  symlink:
+    foreground: blue4
+    font-style: italic
+  broken_symlink:
+    foreground: bg
+    background: red1
+  missing_symlink_target:
+    foreground: red1
+  multi_hard_link: {}
+  socket:
+    foreground: purple2
+    background: bg_green2
+    font-style: bold
+  fifo:
+    foreground: orange2
+    background: bg_orange
+    font-style: bold
+  door:
+    foreground: green3
+    background: bg_green1
+    font-style: bold
+  block_device:
+    foreground: red1
+    background: bg_red
+    font-style: bold
+  character_device:
+    foreground: yellow1
+    background: bg_yellow
+    font-style: bold
+executable:
+  foreground: green2
+archives:
+  foreground: orange1
+  font-style: bold
+media:
+  audio:
+    foreground: blue1
+    font-style: bold
+  image:
+    foreground: purple1
+    font-style: bold
+  video:
+    foreground: purple2
+    font-style: bold
+  fonts:
+    foreground: blue4
+    font-style: bold
+  3d:
+    foreground: purple3
+    font-style: bold
+office:
+  foreground: green1
+  font-style: bold
+text:
+  foreground: fg
+  configuration:
+    foreground: yellow1
+    dockerfile:
+      foreground: orange2
+  licenses:
+    foreground: fg
+    font-style: bold
+  readme:
+    foreground: yellow3
+    font-style: bold
+  special:
+    foreground: yellow2
+    font-style: bold
+  todo:
+    foreground: blue5
+    font-style: bold
+markup:
+  foreground: fg
+programming:
+  foreground: green4
+  tooling:
+    foreground: blue3
+    continuous-integration:
+      foreground: blue2
+unimportant:
+  foreground: gray2
