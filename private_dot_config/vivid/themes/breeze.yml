@@ -9,11 +9,11 @@ colors:
   link_cyan: "1abc9c"
   link_green: "1abc5f"
   link_red: "96281b"
-  path_cyan: "3daee9"
+  path_cyan: "3daec9"
   # logic/code
   code_mint: "1cdc9a"
-  exec_lime: "11d116"
-  doc_emerald: "27ae60"
+  exec_lime: "8fd116"
+  doc_emerald: "27ae8f"
   # config/doc
   char_goldpowder: "f9c380"
   conf_yellow: "f1c40f"
