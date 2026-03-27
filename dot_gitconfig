@@ -11,8 +11,11 @@
     navigate = true
     light = false
     side-by-side = true
+    true-color = always
     line-numbers = true
 [merge]
-    conflictstyle = diff3
+    conflictStyle = zdiff3
 [diff]
     colorMoved = default
+[alias]
+    dft = -c diff.external=difft diff
