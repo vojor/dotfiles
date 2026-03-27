@@ -7,37 +7,38 @@ colors:
   # path
   dir_blue: "1d99f3"
   link_cyan: "1abc9c"
-  link_hard: "1abc5f"
+  link_green: "1abc5f"
+  link_red: "96281b"
   path_cyan: "3daee9"
-  link_dead: "96281b"
   # logic/code
   code_mint: "1cdc9a"
   exec_lime: "11d116"
-  build_emerald: "27ae60"
-  build_create: "f1882e"
+  doc_emerald: "27ae60"
   # config/doc
-  conf_amber: "f9c380"
+  char_goldpowder: "f9c380"
   conf_yellow: "f1c40f"
+  conf_amber: "f1882e"
+  conf_withered: "aa9630"
   data_orange: "ac7400"
+  git_withered: "aa7936"
   readme_gold: "ffbc4b"
-  conf_rc: "aa9630"
   # archive
-  arc_pack_amber: "b67e22"
-  arc_tar_orange: "d3542f"
-  arc_heavy_red: "96283f"
+  pack_amber: "b67e22"
+  tar_orange: "d3542f"
+  heavy_red: "96283f"
   # stylefile
-  sty_web: "b35230"
-  sty_record: "f56965"
+  web_amber: "b35230"
+  record_red: "f56965"
   # media
-  audio_gold: "f290ab"
+  audio_pink: "f290ab"
   img_lavender: "9b59b6"
-  vid_rose: "d186e8"
-  font_ttf: "d199af"
-  td_space: "af0255"
+  vid_wisteria: "d186e8"
+  font_dahlia: "d199af"
+  space_rose: "af0255"
   # --- status ---
-  script_vermil: "ac415f"
-  system_crimson: "c0392b"
-  tool_pink: "af7ac5"
+  script_vermil: "af415f"
+  system_crimson: "dc143c"
+  tool_crimson: "df6660"
   # gray
   mute_gray: "7f8c8d"
   deep_gray: "4d5057"
@@ -58,7 +59,7 @@ core:
   file_with_capability:
     background: deep_gray
   setuid:
-    background: arc_heavy_red
+    background: heavy_red
     foreground: fg
   setgid:
     background: data_orange
@@ -77,14 +78,16 @@ core:
     foreground: link_cyan
     font-style: italic
   broken_symlink:
-    background: link_dead
+    background: link_red
+    font-style: italic
   missing_symlink_target:
-    foreground: link_dead
+    foreground: link_red
+    font-style: italic
   multi_hard_link:
-    foreground: link_hard
+    foreground: link_green
     font-style: underline
   socket:
-    foreground: tool_pink
+    foreground: tool_crimson
     background: deep_gray
     font-style: bold
   fifo:
@@ -96,42 +99,42 @@ core:
     background: bg
     font-style: bold
   block_device:
-    foreground: arc_heavy_red
+    foreground: heavy_red
     background: err_bg
     font-style: bold
   character_device:
-    foreground: conf_amber
+    foreground: char_goldpowder
     background: warn_bg
     font-style: bold
 executable:
   foreground: exec_lime
 archives:
-  foreground: arc_tar_orange
+  foreground: tar_orange
   font-style: bold
   packages:
-    foreground: arc_pack_amber
+    foreground: pack_amber
     font-style: bold
   images:
-    foreground: arc_heavy_red
+    foreground: heavy_red
     font-style: italic
 media:
   audio:
-    foreground: audio_gold
+    foreground: audio_pink
     font-style: bold
   image:
     foreground: img_lavender
     font-style: bold
   video:
-    foreground: vid_rose
+    foreground: vid_wisteria
     font-style: bold
   fonts:
-    foreground: font_ttf
+    foreground: font_dahlia
     font-style: bold
   3d:
-    foreground: td_space
+    foreground: space_rose
     font-style: bold
 office:
-  foreground: build_emerald
+  foreground: doc_emerald
   font-style: bold
 text:
   foreground: fg
@@ -152,14 +155,13 @@ text:
     foreground: path_cyan
     font-style: bold
   other:
-    foreground: fg
     font-style: italic
 markup:
   foreground: link_cyan
   web:
-    foreground: sty_web
+    foreground: web_amber
   other:
-    foreground: sty_record
+    foreground: record_red
 programming:
   foreground: code_mint
   source:
@@ -169,8 +171,10 @@ programming:
   tooling:
     foreground: path_cyan
     vcs:
-      foreground: conf_rc
+      foreground: conf_withered
+      git:
+        foreground: git_withered
     build:
-      foreground: build_create
+      foreground: conf_amber
 unimportant:
   foreground: mute_gray
