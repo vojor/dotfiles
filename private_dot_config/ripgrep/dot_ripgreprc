@@ -5,7 +5,6 @@
 --max-columns=150
 --max-columns-preview
 --one-file-system
---sort-files
 
 # 过滤逻辑
 --glob=!.git/*
@@ -21,18 +20,3 @@
 --glob=!**/.next/*
 --glob=!pnpm-lock.yaml
 --glob=!package-lock.json
-
-# 输出美化
---line-number
---column
---heading
---context=2
---colors=line:fg:yellow
---colors=path:fg:green
---colors=path:style:bold
---colors=match:fg:red
---colors=match:style:bold
-
-# 性能优化
---mmap
---threads=0
